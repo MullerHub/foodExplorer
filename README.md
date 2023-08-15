@@ -2,6 +2,10 @@
 
 Projeto final do Curso Explorer da RocketSeat
 
+Dados para login como ADMIN (usar apenas o email e a password) ==> 
+<br>
+{<br> "name": "Anakin skywalker", <br> "email": "AnakynSkywalker@republicagalactica.com", <br>  "password": "Code66", <br> "isAdmin": true <br> }
+
 ## Sobre:
 
 OBS: A aplicação está com milhas extras, mas não foi finalizado 100% o meu projeto, mas foi concluido 100% os topicos pedidos no explorer, pois estou estudando sobre gateway de pagamentos para fazer essa aplicação ser util de alguma forma, no repositorio de back-end tem as rotas para pagamentos reais, criação de subcontas (pizzarias parceiras, clientes, afiliados, geração de qrcode, pix, pagamento via cartão de credito, mas pelo prazo para entrega do projeto final, não consegui implementar isso a tempo, mas irei fazer o projeto melhorado para desenvolvimento proprio, as rotas no back-end são /a_invoices, /a_payments, as rotas iniciando com "/a_" no back-end são de pagamentos e rotas mais complexas que estou estudando e não implementei nesse projeto, mas estou finalizando para produção)
