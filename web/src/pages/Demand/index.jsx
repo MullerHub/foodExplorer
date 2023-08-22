@@ -15,7 +15,7 @@ export function Demand() {
 
   useEffect(() => {
     fetchOrders()
-  }, [])
+  }, [orders])
 
   async function fetchOrders() {
     try {
