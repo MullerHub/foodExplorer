@@ -13,7 +13,7 @@ import { Button } from '../../components/Button'
 import { getReactToastify, oTiposToastify } from '../../methods/toastify'
 import { InputMask } from '../../components/InputMask'
 
-export function Plate({}) {
+export function Plate({ }) {
   const navigate = useNavigate()
   const [loading, setLoading] = useState(false)
   const [picture, setPicture] = useState()
@@ -21,7 +21,7 @@ export function Plate({}) {
   const [title, setTitle] = useState()
   const [description, setDescription] = useState()
   const [value, setValue] = useState()
-  const [category, setCategory] = useState(1)
+  const [categories, setCategory] = useState()
 
   const [ingredients, setIngredients] = useState([])
   const [newIngredients, setNewIngredients] = useState('')
@@ -68,7 +68,7 @@ export function Plate({}) {
     }
     oFormData.append('value', iValue)
     oFormData.append('ingredients', ingredients.join(','))
-    oFormData.append('category', category)
+    oFormData.append('categories', categories)
     oFormData.append('picture', picture)
     oFormData.append('Content-Type', 'multipart/form-data')
 
@@ -82,6 +82,8 @@ export function Plate({}) {
         'Prato criado com sucesso !'
       )
     } catch (error) {
+      console.log("error: ", error)
+
       setLoading(false)
       getReactToastify(oTiposToastify.TIPO_ERROR, 'Erro ao salvar o Prato !')
     }
@@ -151,12 +153,12 @@ export function Plate({}) {
               <select
                 name=""
                 id=""
-                onChange={oEv => setCategory(oEv.target.value || 1)}
+                onChange={oEv => setCategory(oEv.target.value || 'refeicao')}
               >
-                <option value="1">Refeição</option>
-                <option value="2">Sobremesa</option>
-                <option value="3">Doces</option>
-                <option value="4">Bebidas</option>
+                <option value="refeicao">Refeição</option>
+                <option value="sobremesa">Sobremesa</option>
+                <option value="doces">Doces</option>
+                <option value="bebidas">Bebidas</option>
               </select>
             </div>
           </div>
