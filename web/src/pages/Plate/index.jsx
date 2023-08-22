@@ -59,6 +59,7 @@ export function Plate({ }) {
         'É obrigatório ter uma descrição do Prato!'
       )
     }
+    const finalCategory = categories || 'refeicao';
     const oFormData = new FormData()
     oFormData.append('title', title)
     oFormData.append('description', description)
@@ -68,7 +69,7 @@ export function Plate({ }) {
     }
     oFormData.append('value', iValue)
     oFormData.append('ingredients', ingredients.join(','))
-    oFormData.append('categories', categories)
+    oFormData.append('categories', finalCategory)
     oFormData.append('picture', picture)
     oFormData.append('Content-Type', 'multipart/form-data')
 
@@ -153,7 +154,7 @@ export function Plate({ }) {
               <select
                 name=""
                 id=""
-                onChange={oEv => setCategory(oEv.target.value || 'refeicao')}
+                onChange={oEv => setCategory(oEv.target.value || 'refeicao')} defaultValue="refeicao"
               >
                 <option value="refeicao">Refeição</option>
                 <option value="sobremesa">Sobremesa</option>
