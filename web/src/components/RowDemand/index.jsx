@@ -17,10 +17,10 @@ export function RowDemand({
   // ajustar cor e nome do status do pedido
   let sStatus = '🔴'
   let sStatusName = 'Pendente'
-  if (iStatus == 1) {
+  if (iStatus == 2) {
     sStatus = '🟡'
     sStatusName = 'Preparando'
-  } else if (iStatus == 2) {
+  } else if (iStatus == 3) {
     sStatus = '🟢'
     sStatusName = 'Pronto'
   }
